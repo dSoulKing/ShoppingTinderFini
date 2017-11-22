@@ -128,7 +128,7 @@ public class TinderDinnerFragment extends Fragment {
 
                 e1--;
 
-                if (e1 == 0 && e2 == 0 && e3 == 0 /*&& e4 == 0 && e5 == 0 && e6 == 0 && e7 == 0 && e8 == 0*/) {
+                if (e1 == 0 /*&& e2 == 0 && e3 == 0 && e4 == 0 && e5 == 0 && e6 == 0 && e7 == 0 && e8 == 0*/) {
                     goToNextActivity();
                 }
                 /*else if (e1 == 0 && e2 != 0) {
@@ -194,15 +194,15 @@ public class TinderDinnerFragment extends Fragment {
     private void goToNextActivity() {
 
         Intent intent2 = new Intent(getActivity(), ListeCoursesActivity.class);
-        intent2.putExtra("my list name",nom_equipage);
-        intent2.putExtra("my list", equipage);
+        //intent2.putExtra("my list name",nom_equipage);
+        //intent2.putExtra("my list", equipage);
 
         startActivity(intent2);
     }
 
 
 
-    /*private void setCardStackAdapterPirate() {
+    private void setCardStackAdapterPirate() {
         cardItemsP = new ArrayList<>();
 
         //13 pirates
@@ -234,6 +234,6 @@ public class TinderDinnerFragment extends Fragment {
 
         cardsAdapter = new CardsAdapter(getActivity(), cardItemsP);
         cardStack.setAdapter(cardsAdapter);
-    }*/
+    }
 
 }
