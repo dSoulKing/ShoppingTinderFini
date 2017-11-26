@@ -44,10 +44,12 @@
                     android:layout_marginTop="15dp"
                     android:src="@drawable/dotted" />
             </LinearLayout>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:src="@drawable/white_line" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
@@ -55,10 +57,12 @@
                 android:orientation="horizontal"
                 android:background="@color/jauneHodeoz">
             </LinearLayout>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:src="@drawable/white_line" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
@@ -66,39 +70,51 @@
                 android:orientation="horizontal"
                 android:background="@color/jauneHodeoz">
             </LinearLayout>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:src="@drawable/white_line" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:background="@color/jauneHodeoz">
+
             </LinearLayout>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:src="@drawable/white_line" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:background="@color/jauneHodeoz">
+
             </LinearLayout>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:src="@drawable/white_line" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:background="@color/jauneHodeoz">
+
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
+
 </LinearLayout>

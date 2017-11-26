@@ -6,7 +6,8 @@
     <color name="jauneHodeoz">#F1C84A</color>
     <color name="orangeHodeoz">#F39B2F</color>
     <color name="rougeHodeoz">#BF4804</color>
-    <color name="grisClairHodeoz">#D6D6D6</color>
+    <color name="grisOrangeHodeoz">#D6D6D6</color>
+    <color name="grisJauneHodeoz">#AEAEAE</color>
     <color name="white">#FFFFFF</color>
 
 </resources>

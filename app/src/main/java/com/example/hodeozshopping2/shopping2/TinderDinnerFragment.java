@@ -24,16 +24,14 @@ public class TinderDinnerFragment extends Fragment {
     private SwipeStack cardStack;
     private CardsAdapter cardsAdapter;
     private ArrayList<CardItem> cardItemsP;
-    private View btnCancel;
-    private View btnLove;
     private int currentPosition;
     private int e1, e2, e3, e4, e5, e6, e7, e8;
 
-    Button myButton;
+    private Button myButton;
 
 
-    private ArrayList<Integer> equipage = new ArrayList<>();
-    private ArrayList<String> nom_equipage = new ArrayList<>();
+    ArrayList<Integer> equipage = new ArrayList<>();
+    ArrayList<String> nom_equipage = new ArrayList<>();
     private final List EXTRA_NOM = new LinkedList();
 
 
@@ -47,9 +45,9 @@ public class TinderDinnerFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        //btnCancel = getActivity().findViewById(R.id.cancel);
-        //btnLove = getActivity().findViewById(R.id.bateau);
-        //myButton = (Button) getActivity().findViewById(R.id.button);
+        /*btnCancel = getActivity().findViewById(R.id.cancel);
+        btnLove = getActivity().findViewById(R.id.bateau);
+        myButton = (Button) getActivity().findViewById(R.id.button);
 
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +71,7 @@ public class TinderDinnerFragment extends Fragment {
 
                 cardStack.swipeTopViewToRight();
             }
-        });
+        });*/
     }
 
     @Override
@@ -95,7 +93,7 @@ public class TinderDinnerFragment extends Fragment {
         e8 = mIntent.getIntExtra("e8", e8);
 
 
-        cardStack = (SwipeStack) v.findViewById(R.id.container);
+        cardStack = v.findViewById(R.id.container);
 
 
 
@@ -207,29 +205,29 @@ public class TinderDinnerFragment extends Fragment {
 
         //13 pirates
 
-        cardItemsP.add(new CardItem(R.drawable.a, "Arlong", "Nez Pointu"));
+        cardItemsP.add(new CardItem(R.drawable.bagel, "Arlong", "Nez Pointu"));
         //cardItems.add(new CardItem(R.drawable.f, "Daddy Materson", "Barbu"));
-        cardItemsP.add(new CardItem(R.drawable.g, "Don Krieg", "Défoncé"));
+        cardItemsP.add(new CardItem(R.drawable.boeuf_bourguignon, "Don Krieg", "Défoncé"));
         //cardItems.add(new CardItem(R.drawable.e, "Coby", "L'enfant"));
         //cardItems.add(new CardItem(R.drawable.c, "Smoker", "La fumée"));
         //cardItems.add(new CardItem(R.drawable.d, "Carmen", "Cheveux Rouge"));
-        cardItemsP.add(new CardItem(R.drawable.b, "Baggy", "Le Clown"));
+        cardItemsP.add(new CardItem(R.drawable.cake_thon, "Baggy", "Le Clown"));
         //cardItems.add(new CardItem(R.drawable.i, "Mihawk", "Le Samourai"));
         //cardItems.add(new CardItem(R.drawable.h, "Erik", "Beau Gosse"));
         //cardItems.add(new CardItem(R.drawable.j, "Kaya", "La Blonde"));
-        cardItemsP.add(new CardItem(R.drawable.k, "Kuro", "En costar"));
-        cardItemsP.add(new CardItem(R.drawable.l, "Luffy", "Le Capitaine"));
+        cardItemsP.add(new CardItem(R.drawable.carbonara, "Kuro", "En costar"));
+        cardItemsP.add(new CardItem(R.drawable.chili_cone_carne, "Luffy", "Le Capitaine"));
         //cardItems.add(new CardItem(R.drawable.m, "Morgane", "Sans Main"));
-        cardItemsP.add(new CardItem(R.drawable.n, "Nami", "La Bonnasse"));
+        cardItemsP.add(new CardItem(R.drawable.hachi, "Nami", "La Bonnasse"));
         //cardItems.add(new CardItem(R.drawable.o, "Nojiko", "L'Inconnue"));
-        cardItemsP.add(new CardItem(R.drawable.p, "Ace", "L'Incontournable"));
-        cardItemsP.add(new CardItem(R.drawable.q, "Zorro", "Sans Pitié"));
-        cardItemsP.add(new CardItem(R.drawable.r, "Sanji", "Le Cuisto"));
-        cardItemsP.add(new CardItem(R.drawable.s, "Shanks", "L'Eternel"));
+        cardItemsP.add(new CardItem(R.drawable.mafe_poulet, "Ace", "L'Incontournable"));
+        cardItemsP.add(new CardItem(R.drawable.maki, "Zorro", "Sans Pitié"));
+        cardItemsP.add(new CardItem(R.drawable.paella, "Sanji", "Le Cuisto"));
+        cardItemsP.add(new CardItem(R.drawable.pizza_margarita, "Shanks", "L'Eternel"));
         //cardItems.add(new CardItem(R.drawable.t, "Tashigi", "L'inconnue 2"));
-        cardItemsP.add(new CardItem(R.drawable.u, "Chopper", "Le Mignon"));
-        cardItemsP.add(new CardItem(R.drawable.v, "Usop", "Le peureux"));
-        cardItemsP.add(new CardItem(R.drawable.w, "Yasopp", "Le père"));
+        cardItemsP.add(new CardItem(R.drawable.salade_cesar, "Chopper", "Le Mignon"));
+        cardItemsP.add(new CardItem(R.drawable.spaghetti_bolognaise, "Usop", "Le peureux"));
+        cardItemsP.add(new CardItem(R.drawable.steak_frites, "Yasopp", "Le père"));
         //cardItems.add(new CardItem(R.drawable.x, "Zeff", "Le Chef Etoilé"));
 
         cardsAdapter = new CardsAdapter(getActivity(), cardItemsP);
