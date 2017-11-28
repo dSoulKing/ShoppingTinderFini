@@ -19,6 +19,8 @@ public class CardsAdapter extends BaseAdapter {
     private Activity activity;
     private final static int AVATAR_WIDTH = 150;
     private final static int AVATAR_HEIGHT = 300;
+    private final static int TOQUE_WIDTH = 60;
+    private final static int TOQUE_HEIGHT = 10;
     private List<CardItem> data;
 
     public CardsAdapter(Activity activity, List<CardItem> data) {
@@ -63,27 +65,23 @@ public class CardsAdapter extends BaseAdapter {
         holder.location.setText(getItem(position).getLocation());
         holder.avatar.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
                 getItem(position).getDrawableId(), AVATAR_WIDTH, AVATAR_HEIGHT));
-        //holder.toque1
+        holder.toque1.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
+                getItem(position).getDifficulteId(), TOQUE_WIDTH, TOQUE_HEIGHT));
 
         return convertView;
     }
-
 
     private class ViewHolder {
         private ImageView avatar;
         private TextView name;
         private TextView location;
-        private ImageView toque1, toque2, toque3, toque4, toque5;
+        private ImageView toque1;
 
         public ViewHolder(View view) {
             avatar = (ImageView) view.findViewById(R.id.avatar);
             name = (TextView) view.findViewById(R.id.name);
             location = (TextView) view.findViewById(R.id.location);
             toque1 = (ImageView) view.findViewById(R.id.toque1);
-            toque2 = (ImageView) view.findViewById(R.id.toque2);
-            toque3 = (ImageView) view.findViewById(R.id.toque3);
-            toque4 = (ImageView) view.findViewById(R.id.toque4);
-            toque5 = (ImageView) view.findViewById(R.id.toque5);
         }
     }
 

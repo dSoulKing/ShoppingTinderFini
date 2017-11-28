@@ -144,11 +144,13 @@
         android:paddingTop="15dp">
 
         <ImageView
+            android:id="@+id/non"
             android:layout_width="70dp"
             android:layout_height="50dp"
             app:srcCompat="@drawable/panier_non_icone" />
         
         <Button
+            android:id="@+id/filters"
             android:layout_width="60dp"
             android:layout_height="38dp"
             android:text="Filters"
@@ -161,6 +163,7 @@
             android:backgroundTint="@color/jauneHodeoz"/>
 
         <ImageView
+            android:id="@+id/oui"
             android:layout_width="70dp"
             android:layout_height="50dp"
             app:srcCompat="@drawable/panier_oui_icone" />

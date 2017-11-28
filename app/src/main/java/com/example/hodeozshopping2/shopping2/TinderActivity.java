@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,8 +14,7 @@ import java.util.ArrayList;
 public class TinderActivity extends AppCompatActivity {
 
     private int e1, e2, e3, e4, e5, e6, e7, e8;
-    ArrayList<Integer> equipage = new ArrayList<>();
-    ArrayList<String> nom_equipage = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,6 @@ public class TinderActivity extends AppCompatActivity {
         e6 = mIntent.getIntExtra("e6", e6);
         e7 = mIntent.getIntExtra("e7", e7);
         e8 = mIntent.getIntExtra("e8", e8);
-
-        equipage = getIntent().getIntegerArrayListExtra("my list");
-        nom_equipage = getIntent().getStringArrayListExtra("my list name");
 
 
         TinderDinnerFragment tinderDinnerFragment = new TinderDinnerFragment();
