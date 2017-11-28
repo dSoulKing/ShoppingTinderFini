@@ -6,11 +6,13 @@ public class CardItem {
     private int drawableId;
     private String name;
     private String location;
+    private int difficulte;
 
-    public CardItem(int drawableId, String name, String location) {
+    public CardItem(int drawableId, String name, String location, int difficulte) {
         this.drawableId = drawableId;
         this.name = name;
         this.location = location;
+        this.difficulte = difficulte;
     }
 
     public int getDrawableId() {
@@ -31,5 +33,13 @@ public class CardItem {
 
     public String getLocation() {
         return location;
+    }
+
+    public int getDifficulte() {
+        return difficulte;
+    }
+
+    public void setDifficulte(int difficulte) {
+        this.difficulte = difficulte;
     }
 }

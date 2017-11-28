@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="100"
     tools:context="com.example.hodeozshopping2.shopping2.TinderActivity"
-    >
+    android:weightSum="100">
 
 
     <android.support.v7.widget.Toolbar
@@ -62,81 +61,111 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginStart="25dp"
         android:layout_weight="66"
         android:orientation="vertical"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
         android:weightSum="66">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="15"
+            android:layout_weight="11"
             android:orientation="horizontal"
             android:weightSum="70">
-
+            
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="25"
                 android:layout_gravity="start"
+                android:layout_weight="25"
                 android:text="Dinner"
-                android:textSize="30sp"
-                android:textColor="@color/rougeHodeoz"/>
+                android:textColor="@color/rougeHodeoz"
+                android:textSize="30sp" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="45"
-                android:layout_gravity="end">
+                android:layout_gravity="end"
+                android:layout_weight="45">
 
                 <ImageView
                     android:id="@+id/imageViewDrink"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="start"
-                    android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    app:srcCompat="@drawable/drink_icone"/>
+                    android:layout_marginStart="5dp"
+                    app:srcCompat="@drawable/drink_icone" />
 
                 <ImageView
                     android:id="@+id/imageViewStarter"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    app:srcCompat="@drawable/starter_icone"/>
+                    android:layout_marginStart="5dp"
+                    app:srcCompat="@drawable/starter_icone" />
 
                 <ImageView
                     android:id="@+id/imageViewListmode"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="end"
-                    android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    app:srcCompat="@drawable/listmode_icone"/>
+                    android:layout_marginStart="5dp"
+                    app:srcCompat="@drawable/listmode_icone" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/container"
-            android:name="com.example.hodeozshopping2.shopping2.TinderDinnerFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="51" />
+            android:layout_weight="55"
+            android:orientation="horizontal">
+
+        </LinearLayout>
 
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20">
+        android:layout_weight="20"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/panier_non_icone" />
+        
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="38dp"
+            android:text="Filters"
+            android:textSize="8sp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/jauneHodeoz"/>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/panier_oui_icone" />
 
     </LinearLayout>
+
 
 </LinearLayout>
