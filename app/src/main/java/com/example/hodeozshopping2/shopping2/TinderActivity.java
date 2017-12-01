@@ -52,5 +52,15 @@ public class TinderActivity extends AppCompatActivity {
         //.add(R.id.container, tinderDinnerFragment)
           .addToBackStack(null)
           .commit();
+
+
+        FragmentManager fm2 = getFragmentManager();
+        FragmentTransaction ft2 = fm2.beginTransaction();
+
+        TongueFragment tongueFragment = new TongueFragment();
+
+        ft2.add(R.id.containerTongue, tongueFragment)
+          .addToBackStack("")
+          .commit();
     }
 }
