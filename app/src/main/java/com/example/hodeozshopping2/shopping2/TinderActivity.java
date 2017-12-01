@@ -50,7 +50,7 @@ public class TinderActivity extends AppCompatActivity {
 
         ft.replace(R.id.container, tinderDinnerFragment)
         //.add(R.id.container, tinderDinnerFragment)
-          .addToBackStack(null)
+          //.addToBackStack(null)
           .commit();
 
 
@@ -58,9 +58,10 @@ public class TinderActivity extends AppCompatActivity {
         FragmentTransaction ft2 = fm2.beginTransaction();
 
         TongueFragment tongueFragment = new TongueFragment();
+        tongueFragment.setArguments(bundle);
 
         ft2.add(R.id.containerTongue, tongueFragment)
-          .addToBackStack("")
+          //.addToBackStack("")
           .commit();
     }
 }

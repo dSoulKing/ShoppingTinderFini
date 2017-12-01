@@ -26,7 +26,7 @@ public class TinderDinnerFragment extends Fragment {
     private CardsAdapter cardsAdapter;
     private ArrayList<CardItem> cardItemsP;
     private int currentPosition;
-    private int e1, e2, e3, e4, e5, e6, e7, e8;
+    private int e1, e2, e3, e4, e5, e6, e7, e8, e1oui;
 
     ImageView nonSwipe, ouiSwipe;
     Button filtersButton;
@@ -95,6 +95,7 @@ public class TinderDinnerFragment extends Fragment {
         e7 = mIntent.getIntExtra("e7", e7);
         e8 = mIntent.getIntExtra("e8", e8);
 
+        e1oui = 0;
 
         cardStack = v.findViewById(R.id.container);
 
@@ -125,6 +126,9 @@ public class TinderDinnerFragment extends Fragment {
                 cardStack.swipeTopViewToRight();
 
                 e1--;
+                //e1oui++;
+
+                //setTextLanguette();
 
                 if (e1 == 0 /*&& e2 == 0 && e3 == 0 && e4 == 0 && e5 == 0 && e6 == 0 && e7 == 0 && e8 == 0*/) {
                     goToNextActivity();
@@ -199,35 +203,36 @@ public class TinderDinnerFragment extends Fragment {
     }
 
 
+    //private void setTextLanguette() {}
 
     private void setCardStackAdapterPirate() {
         cardItemsP = new ArrayList<>();
 
         //13 pirates
 
-        cardItemsP.add(new CardItem(R.drawable.bagel, "bagel", "15 minutes", R.drawable.d2));
+        cardItemsP.add(new CardItem(R.drawable.bagel, "bagel", "15 minutes", 2));
         //cardItems.add(new CardItem(R.drawable.f, "Daddy Materson", "Barbu"));
-        cardItemsP.add(new CardItem(R.drawable.boeuf_bourguignon, "Boeuf bourguignon", "40 minutes", R.drawable.d5));
+        cardItemsP.add(new CardItem(R.drawable.boeuf_bourguignon, "Boeuf bourguignon", "40 minutes", 3));
         //cardItems.add(new CardItem(R.drawable.e, "Coby", "L'enfant"));
         //cardItems.add(new CardItem(R.drawable.c, "Smoker", "La fumée"));
         //cardItems.add(new CardItem(R.drawable.d, "Carmen", "Cheveux Rouge"));
-        cardItemsP.add(new CardItem(R.drawable.cake_thon, "Cake thon", "25 minutes", R.drawable.d3));
+        cardItemsP.add(new CardItem(R.drawable.cake_thon, "Cake thon", "25 minutes", 3));
         //cardItems.add(new CardItem(R.drawable.i, "Mihawk", "Le Samourai"));
         //cardItems.add(new CardItem(R.drawable.h, "Erik", "Beau Gosse"));
         //cardItems.add(new CardItem(R.drawable.j, "Kaya", "La Blonde"));
-        cardItemsP.add(new CardItem(R.drawable.carbonara, "Carbonara", "15 minutes", R.drawable.d2));
-        cardItemsP.add(new CardItem(R.drawable.chili_cone_carne, "Chili con carne", "25 minutes", R.drawable.toque_pleine));
+        cardItemsP.add(new CardItem(R.drawable.carbonara, "Carbonara", "15 minutes", 2));
+        cardItemsP.add(new CardItem(R.drawable.chili_cone_carne, "Chili con carne", "25 minutes", 3));
         //cardItems.add(new CardItem(R.drawable.m, "Morgane", "Sans Main"));
-        cardItemsP.add(new CardItem(R.drawable.hachi, "Hachi parmentier", "30 minutes", R.drawable.d3));
+        cardItemsP.add(new CardItem(R.drawable.hachi, "Hachi parmentier", "30 minutes", 3));
         //cardItems.add(new CardItem(R.drawable.o, "Nojiko", "L'Inconnue"));
-        cardItemsP.add(new CardItem(R.drawable.mafe_poulet, "Mafe au poulet", "35 minutes", R.drawable.d4));
-        cardItemsP.add(new CardItem(R.drawable.maki, "Maki saumon cornichon", "Sans Pitié", R.drawable.d3));
-        cardItemsP.add(new CardItem(R.drawable.paella, "Paella", "45 minutes", R.drawable.d4));
-        cardItemsP.add(new CardItem(R.drawable.pizza_margarita, "Pizza margarita", "30 minutes", R.drawable.d3));
+        cardItemsP.add(new CardItem(R.drawable.mafe_poulet, "Mafe au poulet", "35 minutes", 4));
+        cardItemsP.add(new CardItem(R.drawable.maki, "Maki saumon cornichon", "Sans Pitié", 3));
+        cardItemsP.add(new CardItem(R.drawable.paella, "Paella", "45 minutes", 4));
+        cardItemsP.add(new CardItem(R.drawable.pizza_margarita, "Pizza margarita", "30 minutes", 3));
         //cardItems.add(new CardItem(R.drawable.t, "Tashigi", "L'inconnue 2"));
-        cardItemsP.add(new CardItem(R.drawable.salade_cesar, "Salade Cesar", "20 minutes", R.drawable.d3));
-        cardItemsP.add(new CardItem(R.drawable.spaghetti_bolognaise, "Spaghetti bolognaise", "20 minutes", R.drawable.d2));
-        cardItemsP.add(new CardItem(R.drawable.steak_frites, "Steak frites", "15 minutes", R.drawable.d1));
+        cardItemsP.add(new CardItem(R.drawable.salade_cesar, "Salade Cesar", "20 minutes", 3));
+        cardItemsP.add(new CardItem(R.drawable.spaghetti_bolognaise, "Spaghetti bolognaise", "20 minutes", 2));
+        cardItemsP.add(new CardItem(R.drawable.steak_frites, "Steak frites", "15 minutes", 1));
         //cardItems.add(new CardItem(R.drawable.x, "Zeff", "Le Chef Etoilé"));
 
         cardsAdapter = new CardsAdapter(getActivity(), cardItemsP);

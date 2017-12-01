@@ -30,7 +30,7 @@
                 android:id="@+id/avatar"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="39"
+                android:layout_weight="35"
                 android:layout_margin="10dp"
                 android:contentDescription="@null"
                 android:scaleType="fitXY" />
@@ -39,34 +39,78 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4"
-                android:layout_marginLeft="3dp"
-                android:layout_marginStart="3dp"
+                android:layout_weight="5"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4"
-                android:layout_marginLeft="3dp"
-                android:layout_marginStart="3dp"
+                android:layout_weight="5"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="normal" />
 
-            <ImageView
-                android:id="@+id/toque1"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginStart="3dp"
-                android:contentDescription="@null"
-                android:scaleType="fitXY" />
+                android:layout_weight="6"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="8dp"
+                android:weightSum="100">
+
+                <ImageView
+                    android:id="@+id/toque1"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:contentDescription="@null"/>
+
+                <ImageView
+                    android:id="@+id/toque2"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginStart="1dp"
+                    android:contentDescription="@null"/>
+
+                <ImageView
+                    android:id="@+id/toque3"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginStart="1dp"
+                    android:contentDescription="@null"/>
+
+                <ImageView
+                    android:id="@+id/toque4"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginStart="1dp"
+                    android:contentDescription="@null"/>
+
+                <ImageView
+                    android:id="@+id/toque5"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginStart="1dp"
+                    android:contentDescription="@null"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

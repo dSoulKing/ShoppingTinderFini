@@ -19,8 +19,8 @@ public class CardsAdapter extends BaseAdapter {
     private Activity activity;
     private final static int AVATAR_WIDTH = 150;
     private final static int AVATAR_HEIGHT = 300;
-    private final static int TOQUE_WIDTH = 60;
-    private final static int TOQUE_HEIGHT = 10;
+    private final static int TOQUE_WIDTH = 28;
+    private final static int TOQUE_HEIGHT = 30;
     private List<CardItem> data;
 
     public CardsAdapter(Activity activity, List<CardItem> data) {
@@ -65,8 +65,22 @@ public class CardsAdapter extends BaseAdapter {
         holder.location.setText(getItem(position).getLocation());
         holder.avatar.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
                 getItem(position).getDrawableId(), AVATAR_WIDTH, AVATAR_HEIGHT));
-        holder.toque1.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
-                getItem(position).getDifficulteId(), TOQUE_WIDTH, TOQUE_HEIGHT));
+   /*     holder.toque1.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
+                getItem(position).getDifficulteIdun(), TOQUE_WIDTH, TOQUE_HEIGHT));
+        holder.toque2.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
+                getItem(position).getDifficulteIddeux(), TOQUE_WIDTH, TOQUE_HEIGHT));
+        holder.toque3.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
+                getItem(position).getDifficulteIdtrois(), TOQUE_WIDTH, TOQUE_HEIGHT));
+        holder.toque4.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
+                getItem(position).getDifficulteIdquatre(), TOQUE_WIDTH, TOQUE_HEIGHT));
+        holder.toque5.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(),
+                getItem(position).getDifficulteIdcinq(), TOQUE_WIDTH, TOQUE_HEIGHT));
+*/
+        holder.toque1.setImageResource(getItem(position).getDifficulteIdun());
+        holder.toque2.setImageResource(getItem(position).getDifficulteIddeux());
+        holder.toque3.setImageResource(getItem(position).getDifficulteIdtrois());
+        holder.toque4.setImageResource(getItem(position).getDifficulteIdquatre());
+        holder.toque5.setImageResource(getItem(position).getDifficulteIdcinq());
 
         return convertView;
     }
@@ -76,12 +90,21 @@ public class CardsAdapter extends BaseAdapter {
         private TextView name;
         private TextView location;
         private ImageView toque1;
+        private ImageView toque2;
+        private ImageView toque3;
+        private ImageView toque4;
+        private ImageView toque5;
+
 
         public ViewHolder(View view) {
             avatar = (ImageView) view.findViewById(R.id.avatar);
             name = (TextView) view.findViewById(R.id.name);
             location = (TextView) view.findViewById(R.id.location);
             toque1 = (ImageView) view.findViewById(R.id.toque1);
+            toque2 = (ImageView) view.findViewById(R.id.toque2);
+            toque3 = (ImageView) view.findViewById(R.id.toque3);
+            toque4 = (ImageView) view.findViewById(R.id.toque4);
+            toque5 = (ImageView) view.findViewById(R.id.toque5);
         }
     }
 
