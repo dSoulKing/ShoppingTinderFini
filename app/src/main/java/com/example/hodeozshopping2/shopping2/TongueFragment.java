@@ -15,8 +15,8 @@ public class TongueFragment extends Fragment {
 
     private LinearLayout linearTongue;
     private Boolean tongueBoolean;
-    private TextView textFleche,
-                     textDinner;
+    TextView textFleche;
+    TextView textDinner, textDrink, textStarter, textBreakfast, textDessert, textMenu;
 
     private int e1, e2, e3, e4, e5, e6, e7, e8;
 
@@ -29,7 +29,29 @@ public class TongueFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        String textDinnerString = "Dinner : 0/" + e1;
+        textDinner = (TextView) getActivity().findViewById(R.id.dinnerInfo);
+        textDinner.setText(textDinnerString);
 
+        String textDrinkString = "Drink : 0/" + e2;
+        textDrink = (TextView) getActivity().findViewById(R.id.drinkInfo);
+        textDrink.setText(textDrinkString);
+
+        String textStarterString = "Starter : 0/" + e3;
+        textStarter = (TextView) getActivity().findViewById(R.id.starterInfo);
+        textStarter.setText(textStarterString);
+
+        String textBreakfastString = "Breakfast : 0/" + e4;
+        textBreakfast = (TextView) getActivity().findViewById(R.id.breakfastInfo);
+        textBreakfast.setText(textBreakfastString);
+
+        String textDessertString = "Dessert : 0/" + e5;
+        textDessert = (TextView) getActivity().findViewById(R.id.dessertInfo);
+        textDessert.setText(textDessertString);
+
+        String textMenuString = "Menu : 0/" + e6;
+        textMenu = (TextView) getActivity().findViewById(R.id.menuInfo);
+        textMenu.setText(textMenuString);
 
     }
 
@@ -56,9 +78,6 @@ public class TongueFragment extends Fragment {
         textFleche = v.findViewById(R.id.textFleche);
         textFleche.setText(">");
 
-        String textDinnerString = "Dinner : 0/" + e1;
-        textDinner = v.findViewById(R.id.dinnerInfo);
-        textDinner.setText(textDinnerString);
 
         linearTongue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,4 +99,23 @@ public class TongueFragment extends Fragment {
         return v;
     }
 
+
+    public void changeText1 (String data){
+        textDinner.setText(data);
+    }
+    public void changeText2 (String data){
+        textDrink.setText(data);
+    }
+    public void changeText3 (String data){
+        textStarter.setText(data);
+    }
+    public void changeText4 (String data){
+        textBreakfast.setText(data);
+    }
+    public void changeText5 (String data){
+        textDessert.setText(data);
+    }
+    public void changeText6 (String data){
+        textMenu.setText(data);
+    }
 }

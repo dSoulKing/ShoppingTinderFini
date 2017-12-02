@@ -6,11 +6,13 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,25 +22,31 @@ import java.util.List;
 import link.fls.swipestack.SwipeStack;
 
 
-public class TinderDinnerFragment extends Fragment {
+public class TinderDrinkFragment extends Fragment {
+
 
     private SwipeStack cardStack;
     private CardsAdapter cardsAdapter;
     private ArrayList<CardItem> cardItemsP;
     private int currentPosition;
 
-    int e1Max, e2Max, e3Max, e4Max, e5Max, e6Max, e7Max, e8Max, e1, e2, e3, e4, e5, e6, e7, e8;
-    int e1Counter = 0;
+    private int e1Max, e2Max, e3Max, e4Max, e5Max, e6Max, e7Max, e8Max, e1, e2, e3, e4, e5, e6, e7, e8;
+    int e2Counter = 0;
     Communicator comm;
+
+    TextView typeRepas;
+
+    ImageView drinkButton;
 
     ImageView nonSwipe, ouiSwipe;
     Button filtersButton;
 
-    //ArrayList<Integer> equipage = new ArrayList<>();
-    //ArrayList<String> nom_equipage = new ArrayList<>();
+    /*ArrayList<Integer> equipage = new ArrayList<>();
+    ArrayList<String> nom_equipage = new ArrayList<>();
+    private final List EXTRA_NOM = new LinkedList();*/
 
 
-    public TinderDinnerFragment() {
+    public TinderDrinkFragment() {
         // Required empty public constructor
     }
 
@@ -49,11 +57,23 @@ public class TinderDinnerFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         comm = (Communicator) getActivity();
+        typeRepas = getActivity().findViewById(R.id.typeRepas);
+        String drink = "Drink";
+        typeRepas.setText(drink);
+
+        drinkButton = getActivity().findViewById(R.id.imageViewDrink);
 
         nonSwipe = getActivity().findViewById(R.id.non);
         ouiSwipe = getActivity().findViewById(R.id.oui);
         filtersButton = getActivity().findViewById(R.id.filters);
 
+        drinkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                goToDinnerFragment();
+            }
+        });
 
         nonSwipe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,18 +106,25 @@ public class TinderDinnerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_tinder_dinner, container, false);
+        View v = inflater.inflate(R.layout.fragment_tinder_drink, container, false);
 
-        Intent mIntent = getActivity().getIntent();
-        e1 = e1Max = mIntent.getIntExtra("e1", e1);
-        e2 = e2Max = mIntent.getIntExtra("e2", e2);
-        e3 = e3Max = mIntent.getIntExtra("e3", e3);
-        e4 = e4Max = mIntent.getIntExtra("e4", e4);
-        e5 = e5Max = mIntent.getIntExtra("e5", e5);
-        e6 = e6Max = mIntent.getIntExtra("e6", e6);
-        e7 = e7Max = mIntent.getIntExtra("e7", e7);
-        e8 = e8Max = mIntent.getIntExtra("e8", e8);
-
+        Bundle bundle = this.getArguments();
+        e1Max = bundle.getInt("e1Max", e1Max);
+        e2Max = bundle.getInt("e2Max", e2Max);
+        e3Max = bundle.getInt("e3Max", e3Max);
+        e4Max = bundle.getInt("e4Max", e4Max);
+        e5Max = bundle.getInt("e5Max", e5Max);
+        e6Max = bundle.getInt("e6Max", e6Max);
+        e7Max = bundle.getInt("e7Max", e7Max);
+        e8Max = bundle.getInt("e8Max", e8Max);
+        e1 = bundle.getInt("e1", e1);
+        e2 = bundle.getInt("e2", e2);
+        e3 = bundle.getInt("e3", e3);
+        e4 = bundle.getInt("e4", e4);
+        e5 = bundle.getInt("e5", e5);
+        e6 = bundle.getInt("e6", e6);
+        e7 = bundle.getInt("e7", e7);
+        e8 = bundle.getInt("e8", e8);
 
         cardStack = v.findViewById(R.id.container);
 
@@ -127,19 +154,18 @@ public class TinderDinnerFragment extends Fragment {
                 currentPosition = position + 1;
                 cardStack.swipeTopViewToRight();
 
-                e1--;
-                e1Counter++;
-                comm.respond1("Dinner : " + e1Counter + "/" + e1Max);
+                e2--;
+                e2Counter++;
+                comm.respond2("Drink : " + e2Counter + "/" + e2Max);
 
-                //setTextLanguette();
 
                 if (e1 == 0 && e2 == 0 /*&& e3 == 0 && e4 == 0 && e5 == 0 && e6 == 0 && e7 == 0 && e8 == 0*/) {
                     goToNextActivity();
                 }
-                else if (e1 == 0 && e2 != 0) {
-                    goToDrinkFragment();
+                /*else if (e1 == 0 && e2 != 0) {
+                    goToNextActivityBis();
                 }
-                /*else if (e1 == 0 && e2 == 0 && e3 != 0) {
+                else if (e1 == 0 && e2 == 0 && e3 != 0) {
                     goToNextActivityTer();
                 }*/
 
@@ -171,40 +197,38 @@ public class TinderDinnerFragment extends Fragment {
         fragmentTransaction.add(R.id.fragment_shop3, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-    }*/
+    }
 
 
-    private void goToDrinkFragment() {
+    private void goToNextActivityBis() {
 
-        TinderDrinkFragment tinderDrinkFragment = new TinderDrinkFragment();
-
+        Fragment fragment;
+        fragment = new Shopping3SecondFragment();
 
         Bundle bundle = new Bundle();
-        bundle.putInt("e1Max", e1Max);
-        bundle.putInt("e2Max", e2Max);
-        bundle.putInt("e3Max", e3Max);
-        bundle.putInt("e4Max", e4Max);
-        bundle.putInt("e5Max", e5Max);
-        bundle.putInt("e6Max", e6Max);
-        bundle.putInt("e7Max", e7Max);
-        bundle.putInt("e8Max", e8Max);
-        bundle.putInt("e1", e1);
-        bundle.putInt("e2", e2);
-        bundle.putInt("e3", e3);
-        bundle.putInt("e4", e4);
-        bundle.putInt("e5", e5);
-        bundle.putInt("e6", e6);
-        bundle.putInt("e7", e7);
-        bundle.putInt("e8", e8);
-        tinderDrinkFragment.setArguments(bundle);
+        bundle.putInt("n2", n);
+        bundle.putInt("m2", m);
+        bundle.putStringArrayList("my list name3", nom_equipage);
+        bundle.putIntegerArrayList("my list3", equipage);
+        fragment.setArguments(bundle);
 
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        //fragmentTransaction.replace(R.id.fragment_shop3, fragment);
+        fragmentTransaction.add(R.id.fragment_shop3, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }*/
+
+    private void goToDinnerFragment() {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
-        ft.replace(R.id.container, tinderDrinkFragment, "drinkFragment")
-          //.addToBackStack("drinkFragment")
-          .commit();
+        TinderDinnerFragment tinderDinnerFragment = (TinderDinnerFragment) fm.findFragmentByTag("dinnerFragment");
 
+        ft.replace(R.id.container, tinderDinnerFragment, "dinnerFragment")
+                .commit();
     }
 
 

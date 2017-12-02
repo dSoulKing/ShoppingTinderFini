@@ -6,14 +6,10 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import java.util.ArrayList;
+public class TinderActivity extends AppCompatActivity implements Communicator {
 
-public class TinderActivity extends AppCompatActivity {
-
-    private int e1, e2, e3, e4, e5, e6, e7, e8;
+    int e1, e2, e3, e4, e5, e6, e7, e8;
 
 
     @Override
@@ -48,9 +44,8 @@ public class TinderActivity extends AppCompatActivity {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
-        ft.replace(R.id.container, tinderDinnerFragment)
-        //.add(R.id.container, tinderDinnerFragment)
-          //.addToBackStack(null)
+        ft.add(R.id.container, tinderDinnerFragment, "dinnerFragment")
+          //.addToBackStack("dinnerFragment")
           .commit();
 
 
@@ -61,7 +56,44 @@ public class TinderActivity extends AppCompatActivity {
         tongueFragment.setArguments(bundle);
 
         ft2.add(R.id.containerTongue, tongueFragment)
-          //.addToBackStack("")
-          .commit();
+           //.addToBackStack("")
+           .commit();
+    }
+
+    @Override
+    public void respond1(String data) {
+        FragmentManager fm = getFragmentManager();
+        TongueFragment tongueFragment = (TongueFragment) fm.findFragmentById(R.id.containerTongue);
+        tongueFragment.changeText1(data);
+    }
+    @Override
+    public void respond2(String data) {
+        FragmentManager fm = getFragmentManager();
+        TongueFragment tongueFragment = (TongueFragment) fm.findFragmentById(R.id.containerTongue);
+        tongueFragment.changeText2(data);
+    }
+    @Override
+    public void respond3(String data) {
+        FragmentManager fm = getFragmentManager();
+        TongueFragment tongueFragment = (TongueFragment) fm.findFragmentById(R.id.containerTongue);
+        tongueFragment.changeText3(data);
+    }
+    @Override
+    public void respond4(String data) {
+        FragmentManager fm = getFragmentManager();
+        TongueFragment tongueFragment = (TongueFragment) fm.findFragmentById(R.id.containerTongue);
+        tongueFragment.changeText4(data);
+    }
+    @Override
+    public void respond5(String data) {
+        FragmentManager fm = getFragmentManager();
+        TongueFragment tongueFragment = (TongueFragment) fm.findFragmentById(R.id.containerTongue);
+        tongueFragment.changeText5(data);
+    }
+    @Override
+    public void respond6(String data) {
+        FragmentManager fm = getFragmentManager();
+        TongueFragment tongueFragment = (TongueFragment) fm.findFragmentById(R.id.containerTongue);
+        tongueFragment.changeText6(data);
     }
 }
