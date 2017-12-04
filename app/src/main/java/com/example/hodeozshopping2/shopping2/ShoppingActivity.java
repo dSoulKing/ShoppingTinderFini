@@ -35,12 +35,11 @@ public class ShoppingActivity extends AppCompatActivity {
              editTextBudget;
 
     int e1, e2, e3, e4, e5, e6, e7, e8;
-    //int ee1, ee2, ee3, ee4, ee5, ee6, ee7, ee8;
 
     boolean infoBoolean;
 
-    private ArrayList<Integer> equipage = new ArrayList<>();
-    private ArrayList<String> nom_equipage = new ArrayList<>();
+    //private ArrayList<Integer> equipage = new ArrayList<>();
+    //private ArrayList<String> nom_equipage = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -224,22 +223,6 @@ public class ShoppingActivity extends AppCompatActivity {
     }
 
     private void goToNextActivity() {
-        //String value1 = editTextDinner.getText().toString();
-        //e1 = Integer.parseInt(0 + value1);
-        /*String value2 = editTextDrink.getText().toString();
-        ee2 = Integer.parseInt(value2);
-        String value3 = editTextStarter.getText().toString();
-        ee3 = Integer.parseInt(value3);
-        String value4 = editTextBreakfast.getText().toString();
-        ee4 = Integer.parseInt(value4);
-        String value5 = editTextDessert.getText().toString();
-        ee5 = Integer.parseInt(value5);
-        String value6 = editTextMenu.getText().toString();
-        ee6 = Integer.parseInt(value6);
-        String value7 = editTextPersons.getText().toString();
-        ee7 = Integer.parseInt(value7);
-        String value8 = editTextBudget.getText().toString();
-        ee8 = Integer.parseInt(value8);*/
 
         Intent intent = new Intent(ShoppingActivity.this, TinderActivity.class);
         intent.putExtra("e1", e1);
@@ -250,8 +233,8 @@ public class ShoppingActivity extends AppCompatActivity {
         intent.putExtra("e6", e6);
         intent.putExtra("e7", e7);
         intent.putExtra("e8", e8);
-        intent.putExtra("my list name", nom_equipage);
-        intent.putExtra("my list", equipage);
+        //intent.putExtra("my list name", nom_equipage);
+        //intent.putExtra("my list", equipage);
 
         startActivity(intent);
     }
