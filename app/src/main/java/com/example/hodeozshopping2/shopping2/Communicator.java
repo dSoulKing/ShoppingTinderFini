@@ -11,4 +11,5 @@ public interface Communicator {
     public void respond4 (String data);
     public void respond5 (String data);
     public void respond6 (String data);
+
 }

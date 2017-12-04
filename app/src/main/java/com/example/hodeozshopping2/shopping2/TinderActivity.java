@@ -7,15 +7,20 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TinderActivity extends AppCompatActivity implements Communicator {
+public class TinderActivity extends AppCompatActivity implements Communicator, IswitchFragments {
 
     int e1, e2, e3, e4, e5, e6, e7, e8;
+    TinderDinnerFragment tinderDinnerFragment ;
+    TinderDrinkFragment  tinderDrinkFragment  ;
 
+    Boolean booleanTinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tinder);
+
+        booleanTinder = true;
 
         Intent mIntent = getIntent();
         e1 = mIntent.getIntExtra("e1", e1);
@@ -27,8 +32,17 @@ public class TinderActivity extends AppCompatActivity implements Communicator {
         e7 = mIntent.getIntExtra("e7", e7);
         e8 = mIntent.getIntExtra("e8", e8);
 
+        Bundle bundle = new Bundle();
+        bundle.putInt("e1", e1);
+        bundle.putInt("e2", e2);
+        bundle.putInt("e3", e3);
+        bundle.putInt("e4", e4);
+        bundle.putInt("e5", e5);
+        bundle.putInt("e6", e6);
+        bundle.putInt("e7", e7);
+        bundle.putInt("e8", e8);
 
-        TinderDinnerFragment tinderDinnerFragment = new TinderDinnerFragment();
+        /*TinderDinnerFragment tinderDinnerFragment = new TinderDinnerFragment();
 
         Bundle bundle = new Bundle();
         bundle.putInt("e1", e1);
@@ -46,8 +60,11 @@ public class TinderActivity extends AppCompatActivity implements Communicator {
 
         ft.add(R.id.container, tinderDinnerFragment, "dinnerFragment")
           //.addToBackStack("dinnerFragment")
-          .commit();
+          .commit();*/
+        tinderDinnerFragment = new TinderDinnerFragment();
+        tinderDrinkFragment = new TinderDrinkFragment();
 
+        switchFragment(ID.FRAG1);
 
         FragmentManager fm2 = getFragmentManager();
         FragmentTransaction ft2 = fm2.beginTransaction();
@@ -58,6 +75,9 @@ public class TinderActivity extends AppCompatActivity implements Communicator {
         ft2.add(R.id.containerTongue, tongueFragment)
            //.addToBackStack("")
            .commit();
+
+
+
     }
 
     @Override
@@ -95,5 +115,59 @@ public class TinderActivity extends AppCompatActivity implements Communicator {
         FragmentManager fm = getFragmentManager();
         TongueFragment tongueFragment = (TongueFragment) fm.findFragmentById(R.id.containerTongue);
         tongueFragment.changeText6(data);
+    }
+
+
+
+    @Override
+    public void switchFragment(ID id) {
+        Bundle bundle = new Bundle();
+        FragmentManager fm;
+        FragmentTransaction ft;
+        switch (id){
+            case FRAG1:
+
+                bundle.putInt("e1", e1);
+                bundle.putInt("e2", e2);
+                bundle.putInt("e3", e3);
+                bundle.putInt("e4", e4);
+                bundle.putInt("e5", e5);
+                bundle.putInt("e6", e6);
+                bundle.putInt("e7", e7);
+                bundle.putInt("e8", e8);
+                tinderDinnerFragment.setArguments(bundle);
+
+                fm = getFragmentManager();
+                ft = fm.beginTransaction();
+
+                ft.replace(R.id.container, tinderDinnerFragment, "dinnerFragment")
+                        .commit();
+                booleanTinder = false;
+                break;
+
+            case FRAG2:
+
+
+                bundle = new Bundle();
+                bundle.putInt("e1", e1);
+                bundle.putInt("e2", e2);
+                bundle.putInt("e3", e3);
+                bundle.putInt("e4", e4);
+                bundle.putInt("e5", e5);
+                bundle.putInt("e6", e6);
+                bundle.putInt("e7", e7);
+                bundle.putInt("e8", e8);
+                tinderDrinkFragment.setArguments(bundle);
+
+                fm = getFragmentManager();
+                ft = fm.beginTransaction();
+
+                ft.replace(R.id.container, tinderDrinkFragment, "drinkFragment")
+                        .commit();
+
+                break;
+            default:
+                break;
+        }
     }
 }

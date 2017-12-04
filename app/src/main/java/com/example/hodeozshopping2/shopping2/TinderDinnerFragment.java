@@ -33,6 +33,7 @@ public class TinderDinnerFragment extends Fragment {
 
     ImageView nonSwipe, ouiSwipe;
     Button filtersButton;
+    IswitchFragments iswitchFragments;
 
     //ArrayList<Integer> equipage = new ArrayList<>();
     //ArrayList<String> nom_equipage = new ArrayList<>();
@@ -49,6 +50,7 @@ public class TinderDinnerFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         comm = (Communicator) getActivity();
+        iswitchFragments = (IswitchFragments) getActivity();
 
         nonSwipe = getActivity().findViewById(R.id.non);
         ouiSwipe = getActivity().findViewById(R.id.oui);
@@ -176,6 +178,8 @@ public class TinderDinnerFragment extends Fragment {
 
     private void goToDrinkFragment() {
 
+        iswitchFragments.switchFragment(IswitchFragments.ID.FRAG2);
+/*
         TinderDrinkFragment tinderDrinkFragment = new TinderDrinkFragment();
 
 
@@ -203,7 +207,7 @@ public class TinderDinnerFragment extends Fragment {
 
         ft.replace(R.id.container, tinderDrinkFragment, "drinkFragment")
           //.addToBackStack("drinkFragment")
-          .commit();
+          .commit();*/
 
     }
 

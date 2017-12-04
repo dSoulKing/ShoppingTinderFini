@@ -33,6 +33,7 @@ public class TinderDrinkFragment extends Fragment {
     private int e1Max, e2Max, e3Max, e4Max, e5Max, e6Max, e7Max, e8Max, e1, e2, e3, e4, e5, e6, e7, e8;
     int e2Counter = 0;
     Communicator comm;
+    IswitchFragments iswitchFragments;
 
     TextView typeRepas;
 
@@ -57,6 +58,9 @@ public class TinderDrinkFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         comm = (Communicator) getActivity();
+        iswitchFragments = (IswitchFragments) getActivity();
+
+
         typeRepas = getActivity().findViewById(R.id.typeRepas);
         String drink = "Drink";
         typeRepas.setText(drink);
@@ -222,13 +226,7 @@ public class TinderDrinkFragment extends Fragment {
     }*/
 
     private void goToDinnerFragment() {
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-
-        TinderDinnerFragment tinderDinnerFragment = (TinderDinnerFragment) fm.findFragmentByTag("dinnerFragment");
-
-        ft.replace(R.id.container, tinderDinnerFragment, "dinnerFragment")
-                .commit();
+        iswitchFragments.switchFragment(IswitchFragments.ID.FRAG1);
     }
 
 
@@ -277,5 +275,6 @@ public class TinderDrinkFragment extends Fragment {
         cardsAdapter = new CardsAdapter(getActivity(), cardItemsP);
         cardStack.setAdapter(cardsAdapter);
     }
+
 
 }
